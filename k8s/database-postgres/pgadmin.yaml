@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pgadmin4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pgadmin4
+  template:
+    metadata:
+      labels:
+        app: pgadmin4
+    spec:
+      containers:
+        - name: pgadmin4
+          image: 'dpage/pgadmin4'
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PGADMIN_DEFAULT_EMAIL
+              value: ungtrunghieu99@gmail.com
+            - name: PGADMIN_DEFAULT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: pgadmin-secret
+                  key: password
+          ports:
+            - containerPort: 80
+              name: pgadmin4

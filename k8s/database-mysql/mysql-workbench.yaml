@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-workbench
+spec:
+  selector:
+    matchLabels:
+      app: mysql-workbench
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mysql-workbench
+    spec:
+      containers:
+      - image: linuxserver/mysql-workbench:8.0.36
+        name: mysql-workbench
+        ports:
+        - containerPort: 3000
+          name: mysql-workbench

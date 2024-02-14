@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bookstore-web-app
+  labels:
+    app: bookstore
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bookstore
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: bookstore
+    spec:
+      containers:
+      - image: hieuung/bookstore:v6
+        imagePullPolicy: Always
+        name: bookstore-web-app
+        resources:
+          requests:
+            cpu: 1m
+            memory: 256Mi
+          limits:
+            cpu: 500m
+            memory: 512Mi
+        ports:
+        - containerPort: 5000
+          name: web-app
