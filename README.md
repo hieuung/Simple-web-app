@@ -1,2 +1,2 @@
 # Simple-web-app
-My simple web app, deploy using containization for Dev-ops learning
+My simple web app, deploy using containerization for Dev-ops learning
