@@ -53,5 +53,9 @@ kubectl get service -n webapp
 
 ![Service](<assert/Screenshot from 2024-02-20 17-30-07.png>)
 
+<<<<<<< HEAD
 > **_NOTE:_**  Using ```minkibe tunnel``` if LoadBalancer not exposes External-IP
 >>>>>>> 480cd2b (edit)
+=======
+> **_NOTE:_**  Using ```minkibe tunnel``` if LoadBalancer not exposes External-IP
+>>>>>>> master
