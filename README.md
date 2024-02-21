@@ -1,8 +1,6 @@
 # Simple-web-app
-<<<<<<< HEAD
+
 My simple web app, deploy using containerization for Dev-ops learning
-=======
-My simple web app, deploy using containization for Dev-ops learning
 
 ## Tech stack
 - Flask
@@ -53,9 +51,4 @@ kubectl get service -n webapp
 
 ![Service](<assert/Screenshot from 2024-02-20 17-30-07.png>)
 
-<<<<<<< HEAD
 > **_NOTE:_**  Using ```minkibe tunnel``` if LoadBalancer not exposes External-IP
->>>>>>> 480cd2b (edit)
-=======
-> **_NOTE:_**  Using ```minkibe tunnel``` if LoadBalancer not exposes External-IP
->>>>>>> master
