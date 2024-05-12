@@ -23,6 +23,9 @@ spec:
       - image: hieuung/bookstore:v6
         imagePullPolicy: Always
         name: bookstore-web-app
+        env:
+          - name: 
+          value: "{"SQL_URI":"postgresql+psycopg2://hieuut:hieuut@10.102.224.2:5432/bookstore"}"
         resources:
           requests:
             cpu: 1m

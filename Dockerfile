@@ -7,8 +7,6 @@ RUN apt-get update -y && \
 RUN apt update -y && \
     apt install nginx -y
 
-ENV ENV_CONFIG '{"SQL_URI":"postgresql+psycopg2://hieuut:hieuut@10.102.224.2:5432/bookstore"}'
-
 RUN mkdir -p /var/www/hieuut-bookstore
 
 COPY . /var/www/hieuut-bookstore
@@ -18,5 +16,7 @@ WORKDIR /var/www/hieuut-bookstore
 RUN pip install --upgrade pip && \ 
     pip install -r requirements.txt && \
     pip install flask[async]
+
+ENTRYPOINT ["entrypoint.sh"]
 
 CMD ["uwsgi" ,"uwsgi.ini"]
