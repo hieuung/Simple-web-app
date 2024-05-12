@@ -30,7 +30,7 @@ kubectl apply -f ./k8s/database-postgres -n webapp
 
 - (Optional) Created docker image and push to registry. Add SQL_URI (AlchemySQL connection URI) to docker enviroment variable.
 
-- Create deployment for webapp. using created docker image (Currently my docker image)
+- Create deployment for webapp. using created docker image (Currently [my docker image](https://hub.docker.com/repository/docker/hieuung/bookstore/general))
 
 ```
 kubectl apply -f ./k8s/web-app -n webapp
