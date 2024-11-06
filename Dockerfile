@@ -17,6 +17,8 @@ RUN pip install --upgrade pip && \
     pip install -r requirements.txt && \
     pip install flask[async]
 
-ENTRYPOINT ["entrypoint.sh"]
+COPY docker-entrypoint.sh /usr/local/bin/
 
-CMD ["uwsgi" ,"uwsgi.ini"]
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh 
+
+ENTRYPOINT ["docker-entrypoint.sh"]
